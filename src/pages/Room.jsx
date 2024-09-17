@@ -42,8 +42,6 @@ const Room = () => {
       },
     );
 
-    console.log('Unsubscribe: ', unsubscribe);
-
     return () => {
       unsubscribe();
     };
@@ -55,13 +53,11 @@ const Room = () => {
       COLLECTION_ID_MESSAGES,
       [Query.orderDesc('$createdAt')],
     );
-    console.log(response.documents);
     setMessages(response.documents);
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('MESSAGE:', messageBody);
 
     const permissions = [Permission.write(Role.user(user.$id))];
 
@@ -71,15 +67,13 @@ const Room = () => {
       body: messageBody,
     };
 
-    const response = await databases.createDocument(
+    await databases.createDocument(
       DATABASE_ID,
       COLLECTION_ID_MESSAGES,
       ID.unique(),
       payload,
       permissions,
     );
-
-    console.log('Response:', response);
     setMessageBody('');
   };
 
