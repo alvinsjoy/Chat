@@ -13,7 +13,7 @@ This is a realtime chat application built using React, Vite, and Appwrite.
 
 ## Working
 
-https://github.com/user-attachments/assets/d826d67a-5436-45fb-ad49-6fae100463f9
+<https://github.com/user-attachments/assets/d826d67a-5436-45fb-ad49-6fae100463f9>
 
 ## Features
 
@@ -76,10 +76,10 @@ In order to install and run this project locally, you would need to have the fol
 
 The following environment variables are required:
 
-`VITE_API_ENDPOINT`: The API endpoint for Appwrite (defaults to <https://cloud.appwrite.io/v1>).
-`VITE_PROJECT_ID`: The project ID for the Appwrite project.
-`VITE_DATABASE_ID`: The database ID for Appwrite database.
-`VITE_COLLECTION_ID_MESSAGES`: The collection ID for messages collection of the database.
+- `VITE_API_ENDPOINT`: The API endpoint for Appwrite (defaults to <https://cloud.appwrite.io/v1>).
+- `VITE_PROJECT_ID`: The project ID for the Appwrite project.
+- `VITE_DATABASE_ID`: The database ID for Appwrite database.
+- `VITE_COLLECTION_ID_MESSAGES`: The collection ID for messages collection of the database.
 
 ## License
 
