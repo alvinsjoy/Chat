@@ -13,7 +13,7 @@ This is a realtime chat application built using React, Vite, and Appwrite.
 
 ## Working
 
-![Video](./public/chat.mp4)
+https://github.com/user-attachments/assets/d826d67a-5436-45fb-ad49-6fae100463f9
 
 ## Features
 
