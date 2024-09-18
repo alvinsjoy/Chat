@@ -42,13 +42,7 @@ In order to install and run this project locally, you would need to have the fol
     cd Chat
     ```
 
-2. Install the dependencies:
-
-    ```sh
-    npm install
-    ```
-
-3. Create a `.env.local` file in the root directory and add your environment variables:
+2. Create a `.env.local` file in the root directory and add your environment variables (see the [environment variables](#environment-variables) section for more info):
 
     ```env
     VITE_API_ENDPOINT=https://cloud.appwrite.io/v1
@@ -57,13 +51,14 @@ In order to install and run this project locally, you would need to have the fol
     VITE_COLLECTION_ID_MESSAGES=
     ```
 
-4. Run the development server:
+3. Install the dependencies and run the development server:
 
     ```sh
+    npm install
     npm run dev
     ```
 
-5. Open <http://localhost:5173> to view in the browser.
+    Open <http://localhost:5173> to view in the browser.
 
 ## Scripts
 
@@ -76,10 +71,10 @@ In order to install and run this project locally, you would need to have the fol
 
 The following environment variables are required:
 
-- `VITE_API_ENDPOINT`: The API endpoint for Appwrite (defaults to <https://cloud.appwrite.io/v1>).
-- `VITE_PROJECT_ID`: The project ID for the Appwrite project.
-- `VITE_DATABASE_ID`: The database ID for Appwrite database.
-- `VITE_COLLECTION_ID_MESSAGES`: The collection ID for messages collection of the database.
+- `VITE_API_ENDPOINT`: Defines the API endpoint for Appwrite (default: <https://cloud.appwrite.io/v1>).
+- `VITE_PROJECT_ID`: The unique identifier for your Appwrite project.
+- `VITE_DATABASE_ID`: The identifier for the database being used.
+- `VITE_COLLECTION_ID_MESSAGES`: The identifier for the collection (e.g., a collection named "messages") within the database used to store the messages.
 
 ## License
 
