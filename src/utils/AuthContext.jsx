@@ -21,8 +21,8 @@ export const AuthProvider = ({ children }) => {
     try {
       let accountDetails = await account.get();
       setUser(accountDetails);
-    } catch (error) {
-      console.info(error);
+    } catch {
+      console.log('No user found');
     }
     setLoading(false);
   };
@@ -39,7 +39,7 @@ export const AuthProvider = ({ children }) => {
       setUser(accountDetails);
       navigate('/');
     } catch (error) {
-      console.error(error);
+      alert(error.message);
     }
   };
 
@@ -72,7 +72,7 @@ export const AuthProvider = ({ children }) => {
       setUser(accountDetails);
       navigate('/');
     } catch (error) {
-      console.error(error);
+      alert(error.message);
     }
   };
 
