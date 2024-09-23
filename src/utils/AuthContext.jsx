@@ -1,6 +1,6 @@
 import { createContext, useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { account } from '../appwriteConfig';
+import { account, HOST } from '../appwriteConfig';
 import { useNavigate } from 'react-router';
 import { ID } from 'appwrite';
 
@@ -27,6 +27,14 @@ export const AuthProvider = ({ children }) => {
     setLoading(false);
   };
 
+  const fetchUser = async () => {
+    try {
+      let accountDetails = await account.get();
+      setUser(accountDetails);
+    } catch (error) {
+      alert(error.message);
+    }
+  };
   const handleUserLogin = async (e, credentials) => {
     e.preventDefault();
 
@@ -35,8 +43,7 @@ export const AuthProvider = ({ children }) => {
         credentials.email,
         credentials.password,
       );
-      let accountDetails = await account.get();
-      setUser(accountDetails);
+      fetchUser();
       navigate('/');
     } catch (error) {
       alert(error.message);
@@ -47,7 +54,17 @@ export const AuthProvider = ({ children }) => {
     await account.deleteSession('current');
     setUser(null);
   };
-
+  const handleVerification = async () => {
+    try {
+      await account.createVerification(`${HOST}/verify`);
+      alert('Verification email sent!');
+    } catch (error) {
+      alert(
+        'You have reached the limit for verification emails. Please try again later.',
+      );
+      console.log(error);
+    }
+  };
   const handleRegister = async (e, credentials) => {
     e.preventDefault();
 
@@ -68,8 +85,8 @@ export const AuthProvider = ({ children }) => {
         credentials.email,
         credentials.password1,
       );
-      let accountDetails = await account.get();
-      setUser(accountDetails);
+      fetchUser();
+      handleVerification();
       navigate('/');
     } catch (error) {
       alert(error.message);
@@ -78,8 +95,10 @@ export const AuthProvider = ({ children }) => {
 
   const contextData = {
     user,
+    fetchUser,
     handleUserLogin,
     handleLogout,
+    handleVerification,
     handleRegister,
   };
 

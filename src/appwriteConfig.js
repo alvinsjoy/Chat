@@ -1,5 +1,6 @@
 import { Client, Account, Databases } from 'appwrite';
 
+export const HOST = import.meta.env.VITE_HOST;
 export const API_ENDPOINT = import.meta.env.VITE_API_ENDPOINT;
 export const PROJECT_ID = import.meta.env.VITE_PROJECT_ID;
 export const DATABASE_ID = import.meta.env.VITE_DATABASE_ID;

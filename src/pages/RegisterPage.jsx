@@ -1,6 +1,7 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useAuth } from '../utils/hooks/authHook';
 import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router';
 
 const RegisterPage = () => {
   const [credentials, setCredentials] = useState({
@@ -10,8 +11,14 @@ const RegisterPage = () => {
     password2: '',
   });
 
-  const { handleRegister } = useAuth();
+  const { user, handleRegister } = useAuth();
+  const navigate = useNavigate();
 
+  useEffect(() => {
+    if (user) {
+      navigate('/');
+    }
+  }, [navigate, user]);
   const handleInputChange = (e) => {
     let name = e.target.name;
     let value = e.target.value;
