@@ -18,6 +18,7 @@ This is a realtime chat application built using React, Vite, and Appwrite.
 ## Features
 
 - User authentication
+- Email verification
 - Real-time messaging
 - Delete messages
 - Protected routes
