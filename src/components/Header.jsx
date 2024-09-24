@@ -4,11 +4,23 @@ import { LogOut, LogIn } from 'react-feather';
 
 const Header = () => {
   const { user, handleLogout } = useAuth();
+  function getGreeting() {
+    const hour = new Date().getHours();
+
+    if (hour < 12) {
+      return 'Good Morning';
+    } else if (hour < 17) {
+      return 'Good Afternoon';
+    } else {
+      return 'Good Evening';
+    }
+  }
+
   return (
     <div id="header--wrapper">
       {user ? (
         <>
-          Welcome {user.name}
+          {getGreeting()}, {user.name}
           <LogOut className="header--link" onClick={handleLogout} />
         </>
       ) : (
