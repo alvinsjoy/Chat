@@ -43,7 +43,7 @@ export const AuthProvider = ({ children }) => {
         credentials.email,
         credentials.password,
       );
-      fetchUser();
+      await fetchUser();
       navigate('/');
     } catch (error) {
       alert(error.message);
@@ -85,7 +85,7 @@ export const AuthProvider = ({ children }) => {
         credentials.email,
         credentials.password1,
       );
-      fetchUser();
+      await fetchUser();
       handleVerification();
       navigate('/');
     } catch (error) {
