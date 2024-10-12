@@ -68,7 +68,7 @@ const RegisterPage = () => {
               required
               type="password"
               name="password1"
-              placeholder="password123"
+              placeholder="••••••••"
               value={credentials.password1}
               onChange={(e) => {
                 handleInputChange(e);
@@ -82,7 +82,7 @@ const RegisterPage = () => {
               required
               type="password"
               name="password2"
-              placeholder="password123"
+              placeholder="••••••••"
               value={credentials.password2}
               onChange={(e) => {
                 handleInputChange(e);

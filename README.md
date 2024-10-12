@@ -46,6 +46,7 @@ In order to install and run this project locally, you would need to have the fol
 2. Create a `.env.local` file in the root directory and add your environment variables (see the [environment variables](#environment-variables) section for more info):
 
     ```env
+    VITE_HOST=http://localhost:5173
     VITE_API_ENDPOINT=https://cloud.appwrite.io/v1
     VITE_PROJECT_ID=
     VITE_DATABASE_ID=
@@ -72,6 +73,7 @@ In order to install and run this project locally, you would need to have the fol
 
 The following environment variables are required:
 
+- `VITE_HOST`: Defines the base URL for the application. It is used to construct the verification URL for email verification.
 - `VITE_API_ENDPOINT`: Defines the API endpoint for Appwrite (default: <https://cloud.appwrite.io/v1>).
 - `VITE_PROJECT_ID`: The unique identifier for your Appwrite project.
 - `VITE_DATABASE_ID`: The identifier for the database being used.

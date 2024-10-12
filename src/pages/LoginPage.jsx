@@ -37,7 +37,7 @@ const LoginPage = () => {
               required
               type="email"
               name="email"
-              placeholder="name@example.com"
+              placeholder="john@example.com"
               value={credentials.email}
               onChange={(e) => {
                 handleInputChange(e);
@@ -51,7 +51,7 @@ const LoginPage = () => {
               required
               type="password"
               name="password"
-              placeholder="password123"
+              placeholder="••••••••"
               value={credentials.password}
               onChange={(e) => {
                 handleInputChange(e);
