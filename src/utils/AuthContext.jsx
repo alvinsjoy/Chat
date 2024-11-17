@@ -1,6 +1,6 @@
 import { createContext, useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { account, HOST } from '../appwriteConfig';
+import { account } from '../appwriteConfig';
 import { useNavigate } from 'react-router';
 import { ID } from 'appwrite';
 
@@ -56,7 +56,7 @@ export const AuthProvider = ({ children }) => {
   };
   const handleVerification = async () => {
     try {
-      await account.createVerification(`${HOST}/verify`);
+      await account.createVerification(`${window.location.origin}/verify`);
       alert('Verification email sent!');
     } catch (error) {
       alert(
