@@ -86,7 +86,7 @@ export const AuthProvider = ({ children }) => {
         credentials.password1,
       );
       await fetchUser();
-      handleVerification();
+      await handleVerification();
       navigate('/');
     } catch (error) {
       alert(error.message);

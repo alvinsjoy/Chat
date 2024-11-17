@@ -30,6 +30,11 @@ body {
   color: var(--textColorMain);
 }
 
+.link {
+  color: hsl(174 72% 56%);
+  text-decoration: underline;
+  cursor: pointer;
+}
 .container {
   max-width: 600px;
   margin: 20px auto;

@@ -1,7 +1,6 @@
 import { account } from '../appwriteConfig';
 import { useAuth } from '../utils/hooks/authHook';
 import { useNavigate } from 'react-router';
-import { Link } from 'react-router-dom';
 import { useEffect } from 'react';
 
 const VerifyPage = () => {
@@ -35,13 +34,22 @@ const VerifyPage = () => {
         <div className="field--wrapper">
           <p>
             Please verify your email to proceed. If you have already verified,{' '}
-            <Link to="/">continue</Link>.
+            <span
+              className="link"
+              onClick={async () => {
+                await fetchUser();
+                navigate('/');
+              }}
+            >
+              continue
+            </span>
+            .
           </p>
           <input
             type="submit"
             value="Resend Verification Email"
             className="btn btn--lg btn--main"
-            onClick={() => handleVerification()}
+            onClick={async () => await handleVerification()}
           />
         </div>
       </div>
