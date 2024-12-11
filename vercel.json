@@ -1,3 +1,9 @@
 {
-  "rewrites": [{ "source": "/(.*)", "destination": "/" }]
+  "rewrites": [
+    {
+      "source": "/analytics.js",
+      "destination": "https://cloud.umami.is/script.js"
+    },
+    { "source": "/(.*)", "destination": "/" }
+  ]
 }
