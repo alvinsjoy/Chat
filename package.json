@@ -10,7 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "appwrite": "^16.0.0",
+    "appwrite": "^17.0.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-feather": "^2.0.10",
